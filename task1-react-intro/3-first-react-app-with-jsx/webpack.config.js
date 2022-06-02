@@ -1,16 +1,18 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-// const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require("webpack");
+const path = require("path");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
   const config = {
     devtool: "eval-source-map",
     // entry: "./src/index.js",
-    // output: {
-    //   filename: "bundle.js",
-    // },
+    output: {
+      // filename: "bundle.js",
+      path: path.resolve(__dirname, "review_build"),
+    },
     module: {
       rules: [
         {
@@ -41,8 +43,8 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      // new webpack.ProgressPlugin(),
-      // new CleanWebpackPlugin(),
+      new webpack.ProgressPlugin(),
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./src/index.html",
       }),
@@ -53,13 +55,13 @@ module.exports = (env, argv) => {
     // },
   };
 
-  // if (isProduction) {
-  //   config.plugins.push(
-  //     new MiniCssExtractPlugin({
-  //       filename: "[name].css",
-  //     })
-  //   );
-  // }
+  if (isProduction) {
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+      })
+    );
+  }
 
   return config;
 };

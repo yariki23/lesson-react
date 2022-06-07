@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import './search.scss';
-import Greeting from './search.jsx';
+import Greeting from './Search.jsx';
 
 const rootElement = document.querySelector('#root');
 

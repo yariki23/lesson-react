@@ -18,11 +18,11 @@ class Clock extends Component {
       offset: props.offset,
     };
 
-    setInterval(() => {
-      this.setState({
-        offset: this.state.offset,
-      });
-    }, 100);
+    // setInterval(() => {
+    //   this.setState({
+    //     offset: this.state.offset,
+    //   });
+    // }, 100);
   }
 
   render() {

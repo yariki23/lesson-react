@@ -6,8 +6,8 @@ const getTimeWithOffset = offset => {
   const utcOffset = currentTime.getTimezoneOffset() / 60;
   const localTime = new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
   return localTime.getHours() >= 12
-    ? `${localTime.getHours() - 12}:${localTime.getMinutes()}:${localTime.getSeconds()} AM`
-    : `${localTime.getHours()}:${localTime.getMinutes()}:${localTime.getSeconds()} PM`;
+    ? `${localTime.getHours() - 12}:${localTime.getMinutes()}:${localTime.getSeconds()} PM`
+    : `${localTime.getHours()}:${localTime.getMinutes()}:${localTime.getSeconds()} AM`;
 };
 
 class Clock extends Component {

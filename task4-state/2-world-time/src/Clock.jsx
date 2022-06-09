@@ -22,7 +22,7 @@ class Clock extends Component {
       this.setState({
         offset: this.state.offset,
       });
-    }, 1000);
+    }, 100);
   }
 
   render() {

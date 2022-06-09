@@ -28,8 +28,8 @@ class Clock extends Component {
   render() {
     return (
       <div className="clock">
-        <div className="clock__location">{this.state.location}</div>
-        <div className="clock__time">{getTimeWithOffset(this.props.offset)}</div>
+        {/* <div className="clock__location">{this.state.location}</div> */}
+        {/* <div className="clock__time">{getTimeWithOffset(this.props.offset)}</div> */}
       </div>
     );
   }

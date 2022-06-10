@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Toggler extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       toggle: 'Off',

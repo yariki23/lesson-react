@@ -7,7 +7,7 @@ class GoodButton extends React.Component {
 
   render() {
     return (
-      <button className="fancy-button" onClick={() => this.handlerButton}>
+      <button className="fancy-button" onClick={() => this.handlerButton()}>
         Good job!
       </button>
     );

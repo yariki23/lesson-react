@@ -1,13 +1,13 @@
 import React from 'react';
 
 class GoodButton extends React.Component {
-  handlerButton() {
-    alert('Good job!');
+  handlerButton(e) {
+    alert(e.target.textContent);
   }
 
   render() {
     return (
-      <button className="fancy-button" onClick={() => this.handlerButton()}>
+      <button className="fancy-button" onClick={this.handlerButton}>
         Good job!
       </button>
     );

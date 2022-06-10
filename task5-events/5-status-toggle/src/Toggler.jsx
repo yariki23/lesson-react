@@ -5,7 +5,7 @@ class Toggler extends React.Component {
     super(props);
 
     this.state = {
-      toggle: 'Off',
+      toggle: '*Off status here*',
       statusBtn: false,
     };
   }
@@ -13,7 +13,9 @@ class Toggler extends React.Component {
   toggleStatusButton(e) {
     this.setState({
       statusBtn: !this.state.statusBtn,
-      toggle: (e.target.textContent = this.state.statusBtn ? 'Off' : 'On'),
+      toggle: (e.target.textContent = this.state.statusBtn
+        ? '*Off status here*'
+        : '*On status here*'),
     });
   }
 

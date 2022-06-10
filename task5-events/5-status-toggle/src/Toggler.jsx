@@ -10,14 +10,10 @@ class Toggler extends React.Component {
     };
   }
 
-  toggleStatus() {
-    return this.state.statusBtn ? 'Off' : 'On';
-  }
-
   toggleStatusButton(e) {
     this.setState({
       statusBtn: !this.state.statusBtn,
-      toggle: (e.target.textContent = this.toggleStatus()),
+      toggle: (e.target.textContent = this.state.statusBtn ? 'Off' : 'On'),
     });
   }
 

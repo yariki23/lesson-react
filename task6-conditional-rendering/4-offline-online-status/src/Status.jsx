@@ -9,7 +9,7 @@ class Status extends React.Component {
 
   reconnectStatus = () => {
     this.setState({
-      isOnline: true,
+      isOnline: !true,
     });
   };
 

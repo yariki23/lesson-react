@@ -14,12 +14,18 @@ class Status extends React.Component {
   };
 
   render() {
-    const checkOnline = this.state.isOnline ? (
-      <Online />
-    ) : (
-      <Offline reconnectStatus={this.reconnectStatus} />
+    // const checkOnline = this.state.isOnline ? (
+    //   <Online />
+    // ) : (
+    //   <Offline reconnectStatus={this.reconnectStatus} />
+    // );
+
+    return (
+      <div className="status">
+        <Online />
+        <Offline reconnectStatus={this.reconnectStatus} />
+      </div>
     );
-    return <div className="status">{checkOnline}</div>;
   }
 }
 

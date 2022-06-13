@@ -4,12 +4,12 @@ import Offline from './Offline.jsx';
 
 class Status extends React.Component {
   state = {
-    isOnline: true,
+    isOnline: null,
   };
 
   reconnectStatus = () => {
     this.setState({
-      isOnline: !true,
+      isOnline: true,
     });
   };
 

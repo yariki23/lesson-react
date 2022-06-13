@@ -1,8 +1,7 @@
 import React from 'react';
-import GuestGreeting from './GuestGreeting.jsx';
-import UserGreeting from './UserGreeting.jsx';
 import Login from './Login.jsx';
 import Logout from './Logout.jsx';
+import Greeting from './Greeting.jsx';
 
 class Auth extends React.Component {
   state = {
@@ -28,11 +27,10 @@ class Auth extends React.Component {
       <Login onLogin={this.onLogin} />
     );
 
-    const showTitle = this.state.isLoggedIn ? <UserGreeting /> : <GuestGreeting />;
-
     return (
       <div className="panel">
-        {showTitle} {showBtn}
+        <Greeting isLoggedIn={this.state.isLoggedIn} />
+        {showBtn}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import TransactionsLists from './TransactionsLists.jsx';
+import TransactionsList from './TransactionsList.jsx';
 
 const rootElement = document.querySelector('#root');
 
@@ -32,7 +32,7 @@ const transactions = [
   },
 ];
 
-ReactDOM.render(<TransactionsLists transactions={transactions} />, rootElement);
+ReactDOM.render(<TransactionsList transactions={transactions} />, rootElement);
 
 // 0. create project +
 // 1. make static layout +

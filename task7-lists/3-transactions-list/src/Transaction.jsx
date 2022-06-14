@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import moment from 'moment';
 
 const Transaction = ({ from, to, amount, rate, time }) => {

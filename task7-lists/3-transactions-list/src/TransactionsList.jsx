@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import Transaction from './Transaction.jsx';
 
-class TransactionsLists extends Component {
+class TransactionsList extends Component {
   render() {
     const transactions = this.props.transactions;
 
@@ -16,7 +15,7 @@ class TransactionsLists extends Component {
   }
 }
 
-export default TransactionsLists;
+export default TransactionsList;
 
 //algo
 // Передать каждую li (map)

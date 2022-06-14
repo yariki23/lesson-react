@@ -1,9 +1,9 @@
 import React from 'react';
 
-const NumbersList = ({ arrNumbers }) => {
+const NumbersList = ({ numbers }) => {
   return (
     <ul>
-      {arrNumbers.map(num => (
+      {numbers.map(num => (
         <li key={num}>{num}</li>
       ))}
     </ul>

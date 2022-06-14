@@ -1,7 +1,6 @@
 import React from 'react';
 
 const NumbersList = ({ arrNumbers }) => {
-  console.log(arrNumbers);
   return (
     <ul>
       {arrNumbers.map(num => (

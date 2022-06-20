@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Life extends Component {
   constructor(props) {
     super(props);
+    this.state = { number: 0 };
     console.log('constructor: good place to create state');
   }
 
@@ -14,7 +15,7 @@ class Life extends Component {
     console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
@@ -22,9 +23,19 @@ class Life extends Component {
     console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
   }
 
+  // addIncrement() {
+  //   this.setState({
+  //     // number: this.state.number + 1,
+  //   });
+  // }
+
   render() {
     console.log('return React element to build DOM');
-    return <div className="number">32</div>;
+    return (
+      <div className="number" onClick={this.addIncrement}>
+        {this.state.number}
+      </div>
+    );
   }
 }
 

@@ -35,7 +35,7 @@ class Life extends Component {
     console.log('return React element to build DOM');
     return (
       <div className="number" onClick={this.addIncrement}>
-        {this.state.number}
+        {/* {this.state.number} */}
       </div>
     );
   }

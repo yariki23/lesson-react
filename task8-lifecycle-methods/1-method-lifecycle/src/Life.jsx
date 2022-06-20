@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Life extends Component {
   constructor(props) {
     super(props);
-    this.state = { number: 0 };
+    // this.state = { number: 0 };
+    // this.addIncrement = this.addIncrement.bind(this);
     console.log('constructor: good place to create state');
   }
 
@@ -13,6 +14,7 @@ class Life extends Component {
 
   shouldComponentUpdate() {
     console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
+    return true;
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -25,7 +27,7 @@ class Life extends Component {
 
   // addIncrement() {
   //   this.setState({
-  //     // number: this.state.number + 1,
+  //     number: this.state.number + 1,
   //   });
   // }
 

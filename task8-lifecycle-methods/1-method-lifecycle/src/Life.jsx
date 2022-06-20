@@ -17,10 +17,6 @@ class Life extends Component {
     // return true;
   }
 
-  componentDidUpdate() {
-    console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
-  }
-
   componentWillUnmount() {
     console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
   }
@@ -33,7 +29,15 @@ class Life extends Component {
 
   render() {
     console.log('return React element to build DOM');
-    return <div className="count"></div>;
+    return (
+      <div className="count" onClick={this.addIncrement}>
+        {/* {this.state.count} */}
+      </div>
+    );
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 }
 

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Life extends Component {
   constructor(props) {
     super(props);
-    // this.state = { number: 0 };
+    // this.state = { count: 0 };
     // this.addIncrement = this.addIncrement.bind(this);
     console.log('constructor: good place to create state');
   }
@@ -27,15 +27,15 @@ class Life extends Component {
 
   // addIncrement() {
   //   this.setState({
-  //     number: this.state.number + 1,
+  //     count: this.state.count + 1,
   //   });
   // }
 
   render() {
     console.log('return React element to build DOM');
     return (
-      <div className="number" onClick={this.addIncrement}>
-        {/* {this.state.number} */}
+      <div className="count" onClick={this.addIncrement}>
+        {/* {this.state.count} */}
       </div>
     );
   }

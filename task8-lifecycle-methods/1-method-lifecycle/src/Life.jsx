@@ -33,11 +33,7 @@ class Life extends Component {
 
   render() {
     console.log('return React element to build DOM');
-    return (
-      <div className="count" onClick={this.addIncrement}>
-        {/* {this.state.count} */}
-      </div>
-    );
+    return <div className="count"></div>;
   }
 }
 

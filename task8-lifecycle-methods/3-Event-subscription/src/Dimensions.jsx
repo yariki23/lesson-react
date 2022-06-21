@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 
 class Dimensions extends Component {
-  constructor(props) {
-    super(props);
-
-    const { innerWidth, innerHeight } = window;
-
-    this.state = {
-      width: innerWidth,
-      height: innerHeight,
-    };
-  }
+  state = {
+    width: innerWidth,
+    height: innerHeight,
+  };
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
+    const { innerWidth, innerHeight } = window;
   }
 
   componentWillUnmount() {
@@ -22,11 +17,15 @@ class Dimensions extends Component {
 
   onResize = e => {
     const { innerWidth, innerHeight } = e.target;
+    this.setDimensions(innerWidth, innerHeight);
+  };
 
+  setDimensions = (width, height) => {
     this.setState({
-      width: innerWidth,
-      height: innerHeight,
+      width,
+      height,
     });
+    document.title = `${innerWidth} x ${innerHeight}`;
   };
 
   render() {

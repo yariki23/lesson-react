@@ -2,7 +2,8 @@ import React from 'react';
 import UserForm from './UserForm.jsx';
 
 class App extends React.Component {
-  createUser = userDate => {
+  createUser = (e, userDate) => {
+    e.preventDefault();
     console.log(userDate);
   };
   render() {

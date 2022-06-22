@@ -14,14 +14,14 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form className="search">
+      <form className="search" onSubmit={this.showSearchValue}>
         <input
           onChange={this.handleChange}
           value={this.state.value}
           type="text"
           className="search__input"
         />
-        <button onClick={this.showSearchValue} className="search__button">
+        <button type="submit" className="search__button">
           Search
         </button>
       </form>

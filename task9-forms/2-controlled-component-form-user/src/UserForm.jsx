@@ -18,12 +18,6 @@ class UserForm extends React.Component {
     });
   };
 
-  // onSubmit = event => {
-  //   event.preventDefault();
-  //   console.log(this.state);
-  //   this.props.createUser(this.state);
-  // };
-
   render() {
     return (
       <form className="login-form" onSubmit={() => this.props.createUser(event, this.state)}>

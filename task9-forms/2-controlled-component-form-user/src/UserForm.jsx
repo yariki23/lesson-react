@@ -3,22 +3,29 @@ import React from 'react';
 class UserForm extends React.Component {
   state = {
     name: '',
-    student: '',
-    occupation: '',
+    student: false,
+    occupation: 'London',
     about: '',
   };
 
   handleChange = event => {
-    const { name, value } = event.target;
+    const { name, value, checked, type } = event.target;
+
+    const val = type === 'checkbox' ? checked : value;
 
     this.setState({
-      [name]: value,
+      [name]: val,
     });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.createUser(this.state);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={() => this.props.createUser}>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">

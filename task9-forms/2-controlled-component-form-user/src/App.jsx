@@ -7,7 +7,7 @@ class App extends React.Component {
     console.log(userDate);
   };
   render() {
-    return <UserForm createUser={this.createUser} />;
+    return <UserForm onSubmit={this.createUser} />;
   }
 }
 

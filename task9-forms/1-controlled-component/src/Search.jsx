@@ -1,20 +1,20 @@
 import React from 'react';
 
 class Search extends React.Component {
-  state = { value: 'good restaurant' };
+  state = { value: '' };
 
   handleChange = e => {
     this.setState({ value: e.target.value });
   };
 
-  showSearchValue = e => {
+  search = e => {
     event.preventDefault;
     alert(`Search text: ${this.state.value}`);
   };
 
   render() {
     return (
-      <form className="search" onSubmit={this.showSearchValue}>
+      <form className="search" onSubmit={this.search}>
         <input
           onChange={this.handleChange}
           value={this.state.value}

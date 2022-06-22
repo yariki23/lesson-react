@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Search extends React.Component {
-  state = { value: '' };
+  state = { value: 'good restaurant' };
 
   handleChange = e => {
     this.setState({ value: e.target.value });

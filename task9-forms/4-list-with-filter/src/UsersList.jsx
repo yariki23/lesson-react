@@ -19,11 +19,6 @@ class UserList extends React.Component {
     return (
       <div>
         <Filter users={this.props.users} />
-        <ul className="users">
-          {this.props.users.map(user => (
-            <User key={user.id} {...user} />
-          ))}
-        </ul>
       </div>
     );
   }

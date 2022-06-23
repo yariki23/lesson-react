@@ -20,7 +20,7 @@ class UserList extends React.Component {
       <div>
         <Filter users={this.props.users} />
         <ul>
-          
+          <User />
         </ul>
       </div>
 

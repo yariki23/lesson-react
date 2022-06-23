@@ -13,12 +13,12 @@ class UserList extends React.Component {
     this.setState({
       filterText: value,
     });
-    console.log(value);
-    console.log(this.state.users);
   };
 
   render() {
-    let filterUsers = this.props.users.filter(user => user.name.includes(this.state.filterText));
+    let filterUsers = this.props.users.filter(user =>
+      user.name.toLowerCase().includes(this.state.filterText),
+    );
     return (
       <div>
         <Filter

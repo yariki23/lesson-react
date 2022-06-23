@@ -8,20 +8,22 @@ class Filter extends React.Component {
       text: '',
       count: props.users.length,
     };
-    this.filterUser = this.handleChange.bind(this);
+    this.filterUser = this.onChange.bind(this);
   }
 
-  handleChange = event => {
+  // componentDidUpdate() {}
+
+  onChange = event => {
     const { type, value } = event.target;
 
     this.setState({
       [type]: value,
+      count: this.props.users.length,
     });
   };
 
   render() {
     const filterUser = this.props.users.filter(user => user.name.indexOf(this.state.text) > -1);
-
     return (
       <div>
         <div className="filter">
@@ -30,7 +32,7 @@ class Filter extends React.Component {
             type="text"
             className="filter__input"
             value={this.state.text}
-            onChange={(this.handleChange)}
+            onChange={this.onChange}
           />
         </div>
         <ul className="users">

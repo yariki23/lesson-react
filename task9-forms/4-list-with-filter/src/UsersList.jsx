@@ -19,7 +19,11 @@ class UserList extends React.Component {
     return (
       <div>
         <Filter users={this.props.users} />
+        <ul>
+          
+        </ul>
       </div>
+
     );
   }
 }

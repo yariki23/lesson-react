@@ -1,11 +1,6 @@
 import React from 'react';
-import User from './User';
 
 class Filter extends React.Component {
-  onChange = () => {
-    this.props.onChange;
-  };
-
   render() {
     // const filterUser = this.props.users.filter(user => user.name.indexOf(this.state.text) > -1);
     return (

@@ -5,7 +5,7 @@ import User from './User.jsx';
 class UserList extends React.Component {
   state = {
     filterText: '',
-    count: this.props.users.length,
+    users: this.props.users,
   };
 
   onChange = event => {
@@ -14,28 +14,21 @@ class UserList extends React.Component {
       filterText: value,
     });
     console.log(value);
+    console.log(this.state.users);
   };
 
   render() {
-    // let usersList = <Filter />
-    // if (this.state.sorting) {
-    //   usersList = this.props.users
-    //     .slice()
-    //     .sort((a, b) => (this.state.sorting === 'asc' ? a.age - b.age : b.age - a.age));
-    // } else {
-    //   usersList = this.props.users;
-    // }
-
+    let filterUsers = this.props.users.filter(user => user.name.includes(this.state.filterText));
     return (
       <div>
         <Filter
           onChange={this.onChange}
-          users={this.props.users}
+          users={this.state.users}
           filterText={this.state.filterText}
-          count={this.state.count}
+          count={filterUsers.length}
         />
         <ul className="users">
-          {this.props.users.map(user => (
+          {filterUsers.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>

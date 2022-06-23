@@ -20,7 +20,9 @@ class UserList extends React.Component {
       <div>
         <Filter users={this.props.users} />
         <ul>
-          <User users={this.props.users} />
+          {this.props.users.map(user => (
+            <User key={user.id} {...user} />
+          ))}
         </ul>
       </div>
     );

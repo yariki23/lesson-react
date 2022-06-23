@@ -1,4 +1,5 @@
 import React from 'react';
+import User from './User';
 
 class Filter extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class Filter extends React.Component {
       text: '',
       count: props.users.length,
     };
+    this.filterUser = this.handleChange.bind(this);
   }
 
   handleChange = event => {
@@ -15,26 +17,27 @@ class Filter extends React.Component {
     this.setState({
       [type]: value,
     });
-    // const filterUser = this.props.users;
-    // filterUser.filter(user => user.name.indexOf(this.state.text) > -1);
-    // console.log(filterUser);
-    // console.log(this.state.text);
   };
 
-  filterUser() {
-    this.props.users.filter(user => user.name.indexOf(this.state.text) > -1);
-  }
-
   render() {
+    const filterUser = this.props.users.filter(user => user.name.indexOf(this.state.text) > -1);
+
     return (
-      <div className="filter">
-        <span className="filter__count">{this.state.count}</span>
-        <input
-          type="text"
-          className="filter__input"
-          value={this.state.text}
-          onChange={this.handleChange}
-        />
+      <div>
+        <div className="filter">
+          <span className="filter__count">{this.state.count}</span>
+          <input
+            type="text"
+            className="filter__input"
+            value={this.state.text}
+            onChange={(this.handleChange)}
+          />
+        </div>
+        <ul className="users">
+          {filterUser.map(user => (
+            <User key={user.id} {...user} />
+          ))}
+        </ul>
       </div>
     );
   }

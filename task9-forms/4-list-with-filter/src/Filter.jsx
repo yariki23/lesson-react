@@ -15,7 +15,7 @@ class Filter extends React.Component {
           type="text"
           className="filter__input"
           value={this.props.filterText}
-          onChange={() => this.props.onChange(event)}
+          onChange={this.props.onChange}
         />
       </div>
     );

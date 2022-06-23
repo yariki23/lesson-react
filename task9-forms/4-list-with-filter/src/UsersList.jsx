@@ -1,11 +1,21 @@
 import React from 'react';
-import User from './User.jsx';
 import Filter from './Filter.jsx';
+import User from './User.jsx';
 
 class UserList extends React.Component {
   state = {
     filterText: '',
+    count: this.props.users.length,
   };
+
+  onChange = event => {
+    const { value } = event.target;
+    this.setState({
+      filterText: value,
+    });
+    console.log(value);
+  };
+
   render() {
     // let usersList = <Filter />
     // if (this.state.sorting) {
@@ -18,8 +28,13 @@ class UserList extends React.Component {
 
     return (
       <div>
-        <Filter users={this.props.users} />
-        <ul>
+        <Filter
+          onChange={this.onChange}
+          users={this.props.users}
+          filterText={this.state.filterText}
+          count={this.state.count}
+        />
+        <ul className="users">
           {this.props.users.map(user => (
             <User key={user.id} {...user} />
           ))}

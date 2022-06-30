@@ -24,8 +24,8 @@ class App extends Component {
     return (
       <div className="app">
         <Numbers title="All numbers" number={this.state.number}></Numbers>
-        <EvenNumbers title="All numbers" number={this.state.number}></EvenNumbers>
-        <OddNumbers title="All numbers" number={this.state.number}></OddNumbers>
+        <EvenNumbers title="Even number" number={this.state.number}></EvenNumbers>
+        <OddNumbers title="Odd number" number={this.state.number}></OddNumbers>
       </div>
     );
   }

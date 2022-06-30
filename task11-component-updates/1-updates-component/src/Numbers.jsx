@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Numbers extends Component {
+  shouldComponentUpdate(nextProps) {
+    if (this.props.number === nextProps.number && this.props.title === nextProps.title) {
+      return false;
+    }
+    return true;
+  }
   render() {
     return (
       <div className="number">

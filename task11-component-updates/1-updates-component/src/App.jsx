@@ -26,6 +26,7 @@ class App extends Component {
         <Numbers title="All numbers" number={this.state.number}></Numbers>
         <EvenNumbers title="Even number" number={this.state.number}></EvenNumbers>
         <OddNumbers title="Odd number" number={this.state.number}></OddNumbers>
+        <Numbers title="Just 17" number={17}></Numbers>
       </div>
     );
   }

@@ -1,12 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Numbers extends Component {
-  shouldComponentUpdate(nextProps) {
-    if (this.props.number === nextProps.number && this.props.title === nextProps.title) {
-      return false;
-    }
-    return true;
-  }
+class Numbers extends PureComponent {
+
   render() {
     return (
       <div className="number">

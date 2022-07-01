@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Expand = ({ toggleExpandText, isOpen, children, title }) => {
-  let arrow = <i className="fas fa-chevron-up"></i>;
+  let arrowToggle = <i className="fas fa-chevron-up"></i>;
 
   if (!isOpen) {
-    arrow = <i className="fas fa-chevron-down"></i>;
+    arrowToggle = <i className="fas fa-chevron-down"></i>;
   }
 
   return (
@@ -12,7 +12,7 @@ const Expand = ({ toggleExpandText, isOpen, children, title }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={toggleExpandText}>
-          {arrow}
+          {arrowToggle}
         </button>
       </div>
       {isOpen && children}

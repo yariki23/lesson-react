@@ -1,15 +1,12 @@
 import React from 'react';
 
 const Expand = ({ toggleExpandText, isOpen, children, title }) => {
-  let showText = children;
-  if (!isOpen) {
-    showText = null;
-  }
   let arrow = <i className="fas fa-chevron-up"></i>;
 
   if (!isOpen) {
     arrow = <i className="fas fa-chevron-down"></i>;
   }
+
   return (
     <div className="expand border">
       <div className="expand__header">
@@ -18,7 +15,7 @@ const Expand = ({ toggleExpandText, isOpen, children, title }) => {
           {arrow}
         </button>
       </div>
-      {showText}
+      {isOpen && children}
     </div>
   );
 };

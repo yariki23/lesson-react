@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const Expand = ({ onClose, isOpen, children, title }) => {
+const Expand = ({ toggleExpandText, isOpen, children, title }) => {
   if (!isOpen) {
     children = null;
   }
@@ -13,11 +13,11 @@ const Expand = ({ onClose, isOpen, children, title }) => {
     <div className="expand border">
       <div className="expand__header">
         <span className="expand__title">{title}</span>
-        <button className="expand__toggle-btn" onClick={onClose}>
+        <button className="expand__toggle-btn" onClick={toggleExpandText}>
           {arrow}
         </button>
       </div>
-      <div className="expand__content"> {children}</div>
+      {children}
     </div>
   );
 };

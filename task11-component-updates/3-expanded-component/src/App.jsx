@@ -3,23 +3,10 @@ import PropTypes from 'prop-types';
 import Expand from './Expand.jsx';
 
 class App extends Component {
-  state = {
-    isOpen: false,
-  };
-  toggleExpandText = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  };
-
   render() {
     return (
       <div className="app">
-        <Expand
-          isOpen={this.state.isOpen}
-          toggleExpandText={this.toggleExpandText}
-          title="Some title"
-        >
+        <Expand title="Some title">
           <div className="expand__content">
             <p>
               Hooks are a new addition in React 16.8. They let you use state and other React

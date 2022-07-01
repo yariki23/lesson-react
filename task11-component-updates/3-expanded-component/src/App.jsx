@@ -18,7 +18,7 @@ class App extends Component {
         <Expand
           isOpen={this.state.isOpen}
           toggleExpandText={this.toggleExpandText}
-          title="some title"
+          title="Some title"
         >
           <div className="expand__content">
             <p>

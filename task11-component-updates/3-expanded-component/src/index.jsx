@@ -5,4 +5,4 @@ import App from './App.jsx';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<App title="Some title" />, rootElement);
+ReactDOM.render(<App/>, rootElement);

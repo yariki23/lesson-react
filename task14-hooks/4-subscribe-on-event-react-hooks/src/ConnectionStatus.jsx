@@ -1,37 +1,44 @@
 import React, { useEffect, useState } from 'react';
 
-const ConnectionStatus = () => {
-  const [toggleConnect, setConnection] = useState({
+// const ConnectionStatus = () => {};
+
+class ConnectionStatus extends React.Component {
+  state = {
     status: 'online',
     borderClass: 'status',
-  });
+  };
 
-  useEffect(() => {
-    const offline = () => {
-      setConnection({
-        status: 'offline',
-        borderClass: 'status status_offline',
-      });
-    };
+  componentDidMount() {
+    window.addEventListener('offline', this.offline);
+    window.addEventListener('online', this.online);
+  }
 
-    const online = () => {
-      setConnection({
-        status: 'online',
-        borderClass: 'status',
-      });
-    };
+  componentWillUnmount() {
+    window.removeEventListener('offline', this.offline);
+    window.removeEventListener('online', this.online);
+  }
 
-    window.addEventListener('offline', offline);
-    window.addEventListener('online', online);
+  offline = e => {
+    this.setState({
+      status: 'offline',
+      borderClass: 'status status_offline',
+    });
+  };
 
-    return () => {
-      window.removeEventListener('offline', this.offline);
-      window.removeEventListener('online', this.online);
-    };
-  }, []);
-  const { status, borderClass } = toggleConnect;
+  online = e => {
+    this.setState({
+      status: 'online',
+      borderClass: 'status',
+    });
+  };
 
-  return <div className={borderClass}>{status}</div>;
-};
+  toggleClass = () => {
+    window.removeEventListener('offline', () => true);
+  };
+
+  render() {
+    return <div className={this.state.borderClass}>{this.state.status}</div>;
+  }
+}
 
 export default ConnectionStatus;

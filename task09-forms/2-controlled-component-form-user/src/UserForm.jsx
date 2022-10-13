@@ -28,10 +28,10 @@ class UserForm extends React.Component {
           </label>
           <input
             className="form-input"
-            value={this.state.name}
             type="text"
             id="name"
             name="name"
+            value={this.state.name}
             onChange={this.handleChange}
           />
         </div>
